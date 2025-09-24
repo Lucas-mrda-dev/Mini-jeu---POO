@@ -11,8 +11,18 @@ class Player
   end
 
   def gets_damage
-    @life_points = life_points - compute_damage
+    @life_points -= compute_damage
     show_state
+    @life_points = 0 if @life_points <= 0
+    return unless @life_points <= 0
+
+    puts "Le joueur #{name} a été tué !"
+  end
+
+  def gets_damage_app_2
+    @life_points -= HumanPlayer.all[0].compute_damage2
+    show_state
+    @life_points = 0 if @life_points <= 0
     return unless @life_points <= 0
 
     puts "Le joueur #{name} a été tué !"

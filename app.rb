@@ -19,4 +19,4 @@ while player1.life_points > 0 && player2.life_points > 0
   tour += 1
 end
 
-# binding.pry
+binding.pry
